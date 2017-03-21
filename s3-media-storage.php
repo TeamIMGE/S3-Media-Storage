@@ -127,9 +127,9 @@ class S3MS {
             }
         } else {
             if ($bucket_path) {
-                $url = $protocol . $bucket . '.s3.amazonaws.com/' . $bucket_path . '/' . $file;
+                $url = $protocol . $bucket . '/' . $bucket_path . '/' . $file;
             } else {
-                $url = $protocol . $bucket . '.s3.amazonaws.com/' . $file;
+                $url = $protocol . $bucket . '/' . $file;
             }
         }
 
@@ -364,7 +364,7 @@ class S3MS_Transfer_Adapter_S3Class {
     public function __construct($settings)
     {
         if (!class_exists('S3')) {
-            require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'S3.php';
+            //require_once dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'S3.php';
         }
 
         $this->settings = $settings;
